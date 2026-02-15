@@ -84,7 +84,7 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(20px);
             }
 
             to {
@@ -247,6 +247,24 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const card = document.querySelector(".card");
+
+            card.addEventListener("animationend", function () {
+
+                setTimeout(function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                }, 400); // luxury delay
+
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -319,4 +337,3 @@
 
 </body>
 </html>
-
